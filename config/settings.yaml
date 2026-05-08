@@ -1,0 +1,14 @@
+project:
+  name: marriage-forecast-system
+  description: Программная система прогнозирования соотношения браков по регионам Российской Федерации
+
+database:
+  type: postgresql
+  host: ${DB_HOST}
+  port: ${DB_PORT}
+  name: ${DB_NAME}
+
+model:
+  target: marriage_rate
+  forecast_horizon: 1
+  clustering_enabled: true

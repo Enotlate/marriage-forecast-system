@@ -5,6 +5,7 @@ __pycache__/
 .ipynb_checkpoints/
 data/raw/
 data/processed/
+data/tochno_raw/
 *.xlsx
 *.csv
 !data/sample_marriage_data.csv

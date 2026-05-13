@@ -4,13 +4,12 @@ import pandas as pd
 REQUIRED_COLUMNS = [
     "region",
     "year",
-    "marriage_rate",
-    "income",
-    "unemployment",
+    "marriages",
     "population",
+    "marriage_rate",
 ]
 
-NUMERIC_COLUMNS = ["year", "marriage_rate", "income", "unemployment", "population"]
+NUMERIC_COLUMNS = ["year", "marriages", "population", "marriage_rate"]
 
 
 def validate_data(data: pd.DataFrame) -> list[str]:
@@ -35,5 +34,7 @@ def validate_data(data: pd.DataFrame) -> list[str]:
         values = pd.to_numeric(data[column], errors="coerce")
         if values.isna().any():
             errors.append(f"Колонка {column} должна быть числовой.")
+        elif (values < 0).any():
+            errors.append(f"Колонка {column} не должна содержать отрицательные значения.")
 
     return errors

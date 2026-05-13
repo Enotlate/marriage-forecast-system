@@ -9,10 +9,9 @@ def test_forecast_returns_predictions_for_each_row():
         {
             "region": ["Москва", "Санкт-Петербург", "Республика Татарстан"],
             "year": [2022, 2022, 2022],
-            "marriage_rate": [6.7, 7.0, 7.5],
-            "income": [105000, 81500, 51500],
-            "unemployment": [2.0, 2.3, 3.1],
-            "population": [13010000, 5600000, 3920000],
+            "marriages": [103530, 58240, 27612],
+            "population": [13104200, 5600000, 4001600],
+            "marriage_rate": [7.9, 10.4, 6.9],
         }
     )
 

@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.cluster import KMeans
 
 
-CLUSTER_COLUMNS = ["income", "unemployment", "population", "marriage_rate"]
+CLUSTER_COLUMNS = ["marriages", "population", "marriage_rate"]
 
 
 def add_region_clusters(data: pd.DataFrame, n_clusters: int = 3) -> pd.DataFrame:

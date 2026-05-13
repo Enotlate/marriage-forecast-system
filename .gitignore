@@ -7,6 +7,7 @@ data/raw/
 data/processed/
 *.xlsx
 *.csv
+!data/sample_marriage_data.csv
 .DS_Store
 .idea/
 .vscode/

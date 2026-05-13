@@ -32,6 +32,7 @@ data/
 tests/
   test_forecast_model.py
 docs/
+  data_sources.md
   maintenance_plan.md
 ```
 
@@ -49,7 +50,8 @@ pip install -r requirements.txt
 streamlit run src/app.py
 ```
 
-Если пользователь не загружает CSV-файл, приложение использует пример данных из `data/sample_marriage_data.csv`.
+Если пользователь не загружает CSV-файл, приложение использует файл `data/sample_marriage_data.csv`.
+Сейчас этот файл является шаблоном для ручного заполнения официальными данными Росстата/ЕМИСС за 2020-2024 годы. Пустые значения нужно заполнить перед запуском прогноза.
 
 ## Запуск тестов
 

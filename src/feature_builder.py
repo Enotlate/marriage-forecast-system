@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-FEATURE_COLUMNS = ["year", "marriages", "population"]
+FEATURE_COLUMNS = ["year"]
 TARGET_COLUMN = "marriage_rate"
 
 

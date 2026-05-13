@@ -4,12 +4,11 @@ import pandas as pd
 REQUIRED_COLUMNS = [
     "region",
     "year",
-    "marriages",
-    "population",
     "marriage_rate",
 ]
 
-NUMERIC_COLUMNS = ["year", "marriages", "population", "marriage_rate"]
+NUMERIC_COLUMNS = ["year", "marriage_rate"]
+OPTIONAL_NUMERIC_COLUMNS = ["marriages"]
 
 
 def validate_data(data: pd.DataFrame) -> list[str]:
@@ -30,7 +29,9 @@ def validate_data(data: pd.DataFrame) -> list[str]:
     elif ((years < 1990) | (years > 2100)).any():
         errors.append("Колонка year должна находиться в диапазоне от 1990 до 2100.")
 
-    for column in NUMERIC_COLUMNS:
+    for column in NUMERIC_COLUMNS + [
+        column for column in OPTIONAL_NUMERIC_COLUMNS if column in data.columns
+    ]:
         values = pd.to_numeric(data[column], errors="coerce")
         if values.isna().any():
             errors.append(f"Колонка {column} должна быть числовой.")
